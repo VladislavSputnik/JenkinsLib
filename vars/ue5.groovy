@@ -28,7 +28,7 @@ def buildPrecompiledProject(engineRoot, projectName, project, config, platform, 
    init(engineRoot, projectName, project)
    
    // Package
-   bat(label: "Package UE5 project", script: "\"${ue5Info.engineRoot}Engine\\Build\\BatchFiles\\RunUAT.bat\" BuildCookRun -Project=\"${ue5Info.project}\" -NoP4 -nocompileeditor -skipbuildeditor -TargetPlatform=${platform} -Platform=${platform} -ClientConfig=${config} -Cook -Build -Stage -Pak -Archive -Archivedirectory=\"${outputDir}\" -Rocket -Prereqs -iostore -compressed -Package -nocompile -nocompileuat")
+   bat(label: "Package UE5 project", script: "\"${ue5Info.engineRoot}Engine\\Build\\BatchFiles\\RunUAT.bat\" BuildCookRun -Project=\"C:\Jenkins\Y2024-Y3\TeamFish\Development\fatsoensrakker\fatsoensrakker.uproject" -NoP4 -nocompileeditor -skipbuildeditor -TargetPlatform=${platform} -Platform=${platform} -ClientConfig=${config} -Cook -Build -Stage -Pak -Archive -Archivedirectory=\"${outputDir}\" -Rocket -Prereqs -iostore -compressed -Package -nocompile -nocompileuat")
 }
 
 def buildCustomProject(engineRoot, projectName, project, config, platform, outputDir, customFlags = "-Cook -Allmaps -Build -Stage -Pak -Rocket -Prereqs -Package -crashreporter", logFile = "${env.WORKSPACE}\\Logs\\UE5Build-${env.BUILD_NUMBER}.txt")
